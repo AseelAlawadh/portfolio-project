@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Aseel Alawadh Ex · Bootstrap</title>
+    <title>Aseel Alawadh EX blog</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -42,19 +43,28 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Blog </a>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'home' %}">Home </a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="{% url 'allblogs' %}">My Blog </a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://aseel.tech">Blog </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Github</a>
+                  <a class="nav-link" href="https://github.com/AseelAlawadh">Github</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Linkedin</a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/aseelalawadh/">Linkedin</a>
                   </li>
-                
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% static 'fake_resume.pdf' %}">Resume</a>
+                    </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Twitter</a>
+                  <a class="nav-link " href="https://twitter.com/Aseel0_3" tabindex="-1" aria-disabled="true">Twitter</a>
                 </li>
+              
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -69,10 +79,10 @@
   <h1 class="text-center pt-3">Welcom to my Blog</h1>
   <br/>
   <br/>
-  <h2>Hi </h2>
+  <h2>Latest posts </h2>
   <hr/>
   {% for blog in blogs.all %}
-  <a href=""><h3> {{ blog.title }}</h3></a>
+  <a href="{% url 'detail' blog.id %}"><h3> {{ blog.title }}</h3></a>
   <!-- {{ blog.pub_date }} -->
   {{ blog.pub_date_pretty }}
   <br/>

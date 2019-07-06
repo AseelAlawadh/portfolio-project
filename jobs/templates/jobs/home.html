@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
+
   <head>
+
+  <!-- after  we adding static file -->
+  {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -8,7 +12,6 @@
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Aseel Alawadh Ex · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -43,18 +46,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Blog </a>
+                  <a class="nav-link" href="https://aseel.tech">Blog </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Linkedin</a>
+                    <a class="nav-link" href="{% url 'allblogs' %}">My Blog </a>
                   </li>
-                
                 <li class="nav-item">
-                  <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Twitter</a>
+                  <a class="nav-link" href="https://github.com/AseelAlawadh">Github</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/aseelalawadh/">Linkedin</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% static 'fake_resume.pdf' %}">Resume</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="https://twitter.com/Aseel0_3" tabindex="-1" aria-disabled="true">Twitter</a>
+                </li>
+              
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -73,7 +82,9 @@
         <a href="mailto:Aseel.alawadh@gmail.com" class="btn btn-primary my-2">Email Me </a>
         <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
       </p>
+      <img src="{% static 'Aseel.png'%}" height='200'/> 
     </div>
+
   </section>
 
   <div class="album py-5 bg-light">
