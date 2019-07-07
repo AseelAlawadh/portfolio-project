@@ -136,6 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#نحتاج نعرف شي بحيث احد اذا وصل للصوره وين يروح 
-# يعني لما احد ينزل صوره انشأء جوب وفيها صوره نوديه للايمج بحيث يروح للميديا ويوديه لفولدر الايمج ويحفظها له 
+
 MEDIA_URL = '/media/'
